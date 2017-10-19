@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/fl_maina_fragments"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#F0EFF5"></FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#AAA9AF" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F6F6F8"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_5">
+
+        <RelativeLayout
+            android:id="@+id/rl_maina_message"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/layout"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp">
+
+                <RadioButton
+                    android:id="@+id/rb_maina_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:button="@null"
+                    android:drawablePadding="@dimen/dp_3"
+                    android:drawableTop="@drawable/rb_message"
+                    android:gravity="center"
+                    android:text="消息"
+                    android:paddingRight="@dimen/dp_10"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/fourTextSize" /><!--@string/message-->
+
+            </RelativeLayout>
+
+            <!-- em_unread_dot-->
+            <TextView
+                android:id="@+id/unread_msg_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/layout"
+                android:layout_alignParentTop="true"
+                android:background="@mipmap/ease_unread_count_bg"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:visibility="invisible" /><!--  android:layout_alignRight="@+id/rb_maina_message"    -->
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_maina_contacts"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RadioButton
+                android:id="@+id/rb_maina_contacts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:button="@null"
+                android:checked="false"
+                android:drawablePadding="@dimen/dp_3"
+                android:drawableTop="@drawable/rb_contacts"
+                android:gravity="center"
+                android:text="通讯录"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/fourTextSize" /><!--@string/contacts_g-->
+
+            <TextView
+                android:id="@+id/unread_address_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/rb_maina_contacts"
+                android:layout_alignParentTop="true"
+                android:background="@mipmap/point_red"
+                android:visibility="gone" /><!--em_unread_dot-->
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_maina_find"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RadioButton
+                android:id="@+id/rb_maina_find"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:button="@null"
+                android:drawablePadding="@dimen/dp_3"
+                android:drawableTop="@drawable/rb_find"
+                android:gravity="center"
+                android:text="发现"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/fourTextSize" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_maina_liveplay"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_weight="1">
+
+            <RadioButton
+                android:id="@+id/rb_maina_liveplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:button="@null"
+                android:drawablePadding="@dimen/dp_3"
+                android:drawableTop="@drawable/rb_liveplay"
+                android:gravity="center"
+                android:text="直播"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/fourTextSize" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_maina_mine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RadioButton
+                android:id="@+id/rb_maina_mine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:button="@null"
+                android:drawablePadding="@dimen/dp_3"
+                android:drawableTop="@drawable/rb_mine"
+                android:gravity="center"
+                android:text="我"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/fourTextSize" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

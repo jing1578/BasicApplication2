@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">BasicApplication</string>
+
+    <string name="trumpet_s">小号</string>
+    <string name="standard_s">标准</string>
+    <string name="large_s">大号</string>
+    <string name="especiallybig_s">特大</string>
+
+
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="prompt">提示</string>
+</resources>

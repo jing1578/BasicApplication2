@@ -1,0 +1,31 @@
+1.progressbar指定风格style="?android:attr/progressBarStyleHorizontal" 水平进度条 默认圆形进度条
+android:max="100"设置进度条最大值 progressBar.getProgress(); progressBar.setProgress(progress);
+2.EditText最佳实践设置最大行数
+3.LinearLayout 的排列方向是 horizontal 时，只有垂直方向上的对齐方式才会生效，因为此时水
+  平方向上的长度是不固定的，每添加一个控件，水平方向上的长度都会改变，因而无法指定
+  该方向上的对齐方式。同样的道理，当 LinearLayout 的排列方向是 vertical 时，只有水平方
+  向上的对齐方式才会生效。
+4.自定义控件  引用布局(include)
+5.在编写 Android 程序的时候，尽量将控件或布局的大小指定成 match_parent或 wrap_content，如果必须要指定一个固定值，则使用 dp (dip,密度无关像素)来作为单位，指定文字大小的时候
+  使用 sp (可伸缩像素)作为单位
+6..9图在图片的四个边框绘制一个个的小黑点，在上边框和左边框绘制的部分就表示
+     当图片需要拉伸时就拉伸黑点标记的区域，在下边框和右边框绘制的部分则表示内容会被放
+     置的区域
+7.适配器可多继承ArrayAdapter  listview.setSelection(index);将ListView定位到某一行
+8.隐藏标题栏 requestWindowFeature(Window.FEATURE_NO_TITLE);一定要在setContentView(id)执行;
+
+
+9.图片选择器 ,二维码扫描吱丫项目里面,地区选择电话区号,地区选择地址
+DevStore 开发者服务商店
+umeng统计
+bugly热更新
+sharesdk,umeng分享
+极光推送,umeng推送
+百度地图.高德地图
+科大讯飞,百度语音
+
+10.利用Application传递数据,尽量少使用static变量
+11.图片选择器 https://github.com/LuckSiege/PictureSelector
+12.二维码扫描 http://blog.csdn.net/eclipsexys/article/details/47834865
+13.使用mvc模式,android默认提供xml文件和自定义view为view层;controller为activity/fragment;model模型层:存储数据实体类,简单逻辑处理;
+data层放置数据,network,sharedpreferences,database,cache.

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <org.jing1578.basicapplication.widget.HeadBar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:textTitle="通讯录">
+    </org.jing1578.basicapplication.widget.HeadBar>
+
+    <org.jing1578.basicapplication.widget.SearchBar
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </org.jing1578.basicapplication.widget.SearchBar>
+
+</LinearLayout>
