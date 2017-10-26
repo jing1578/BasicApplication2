@@ -30,14 +30,16 @@ public class ListViewUtils {
     }
 
     public void setLoadMoreListener(ListView listView, final CallBack callBack) {
-        if (listView == null || callBack == null)
+        if (listView == null || callBack == null) {
             return;
+        }
 
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-                if (!enable)
+                if (!enable) {
                     return;
+                }
                 if (scrollState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE) {
                     if (canLoad) {
                         if (callBack != null) {
@@ -49,8 +51,9 @@ public class ListViewUtils {
 
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-                if (!enable)
+                if (!enable) {
                     return;
+                }
                 if (firstVisibleItem + visibleItemCount + visibleItemCount >= totalItemCount - 1 && totalItemCount >= count) {
                     canLoad = true;
                 } else {
@@ -62,14 +65,16 @@ public class ListViewUtils {
     }
 
     public void setLoadMoreListener(GridView listView, final CallBack callBack) {
-        if (listView == null || callBack == null)
+        if (listView == null || callBack == null) {
             return;
+        }
 
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-                if (!enable)
+                if (!enable) {
                     return;
+                }
                 if (scrollState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE) {
                     if (canLoad) {
                         if (callBack != null) {
@@ -82,8 +87,9 @@ public class ListViewUtils {
 
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-                if (!enable)
+                if (!enable) {
                     return;
+                }
                 if (firstVisibleItem + visibleItemCount + visibleItemCount >= totalItemCount - 1 && totalItemCount >= count) {
                     canLoad = true;
                 } else {
@@ -95,8 +101,9 @@ public class ListViewUtils {
     }
 
     public void setLoadMoreListener(RecyclerView listView, final CallBack callBack) {
-        if (listView == null || callBack == null)
+        if (listView == null || callBack == null) {
             return;
+        }
 
         listView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             int lastCount = 0;
@@ -106,8 +113,9 @@ public class ListViewUtils {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
-                if (!isUp)
+                if (!isUp) {
                     return;
+                }
                 if (newState == RecyclerView.SCROLL_STATE_IDLE) {
                     if (lastCount+2 >= recyclerView.getAdapter().getItemCount() && lastCount > 0) {
                         if (callBack != null) {
@@ -121,8 +129,9 @@ public class ListViewUtils {
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
                 isUp = dy > 0;
-                if (!isUp)
+                if (!isUp) {
                     return;
+                }
                 if (manager == null) {
                     manager = recyclerView.getLayoutManager();
                 }
@@ -142,8 +151,9 @@ public class ListViewUtils {
      */
     public static int getListItemTotalHeight(RecyclerView.LayoutManager linearLayoutManager, boolean hasHead, boolean hasFooter) {
         int count = linearLayoutManager.getChildCount();
-        if (count < 1)
+        if (count < 1) {
             return -1;
+        }
         int height = 0;
         View view = null;
         for (int i = 0; i < 1; i++) {
@@ -153,14 +163,17 @@ public class ListViewUtils {
             height += linearLayoutManager.getTopDecorationHeight(view);
         }
         count = linearLayoutManager.getItemCount();
-        if (hasHead)
+        if (hasHead) {
             count -= 1;
-        if (hasFooter)
+        }
+        if (hasFooter) {
             count -= 1;
+        }
 
         height *= count;
-        if (height == 0)
+        if (height == 0) {
             return -1;
+        }
         return height;
     }
 

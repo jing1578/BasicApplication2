@@ -13,6 +13,7 @@ import org.jing1578.basicapplication.R;
 
 /**
  * Created by jing1578 on 2017/10/19 14:49.
+ * 头部框
  */
 
 public class HeadBar extends RelativeLayout {

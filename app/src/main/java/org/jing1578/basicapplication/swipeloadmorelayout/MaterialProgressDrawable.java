@@ -241,6 +241,7 @@ public class MaterialProgressDrawable extends Drawable implements Animatable {
         c.restoreToCount(saveCount);
     }
 
+    @Override
     public int getAlpha() {
         return mRing.getAlpha();
     }
@@ -362,7 +363,9 @@ public class MaterialProgressDrawable extends Drawable implements Animatable {
 
                     // If this view is removed by parent
                     // clear the anim
-                    if ( mAnimExcutor.getParent() == null ) stop();
+                    if ( mAnimExcutor.getParent() == null ) {
+                        stop();
+                    }
                 }
             }
         };

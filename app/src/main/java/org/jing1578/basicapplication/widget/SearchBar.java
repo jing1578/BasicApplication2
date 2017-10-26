@@ -19,6 +19,7 @@ import org.jing1578.basicapplication.R;
 
 /**
  * Created by jing1578 on 2017/10/19 16:21.
+ * 搜索框
  */
 
 public class SearchBar extends RelativeLayout {

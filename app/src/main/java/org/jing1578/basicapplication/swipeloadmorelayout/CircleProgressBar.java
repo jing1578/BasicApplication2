@@ -333,6 +333,7 @@ public class CircleProgressBar extends AppCompatImageView {
     /**
      * Update the background color of the mBgCircle image view.
      */
+    @Override
     public void setBackgroundColor(int colorRes) {
         if (getBackground() instanceof ShapeDrawable) {
             final Resources res = getResources();

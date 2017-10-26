@@ -4,6 +4,7 @@ import android.os.Environment;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -67,17 +68,29 @@ public class HttpUtil {
 //                    DataOutputStream dataOutputStream=new DataOutputStream(httpURLConnection.getOutputStream());
 //                    dataOutputStream.writeBytes("username=admin&password=123456");
                     InputStream in = connection.getInputStream();
-                    BufferedReader reader = new BufferedReader(new
-                            InputStreamReader(in));
-                    StringBuilder response = new StringBuilder();
-                    String line;
-                    while ((line = reader.readLine()) != null) {
-                        response.append(line);
+//                    BufferedReader reader = new BufferedReader(new
+//                            InputStreamReader(in));
+//                    StringBuilder response = new StringBuilder();
+//                    String line;
+//                    while ((line = reader.readLine()) != null) {
+//                        response.append(line);
+//                    }
+//                    if (listener != null) {
+//                    // 回调onFinish()方法
+//                        listener.onFinish(response.toString());
+//                    }
+                    byte[] buffer=new byte[1024];
+                    ByteArrayOutputStream baos=new ByteArrayOutputStream();
+                    int len=0;
+                    while ((len=in.read(buffer))!=-1){
+                        baos.write(buffer,0,len);
                     }
+                    baos.flush();
                     if (listener != null) {
-                    // 回调onFinish()方法
-                        listener.onFinish(response.toString());
+                        // 回调onFinish()方法
+                        listener.onFinish(baos.toString("utf-8"));
                     }
+
                 } catch (Exception e) {
                     if (listener != null) {
                     // 回调onError()方法

@@ -16,15 +16,15 @@ import org.jing1578.basicapplication.R;
 public class CommFooter {
 
 
-    public static  CircleProgressBar progressBar;
-    public static TextView textView;
+    public   CircleProgressBar progressBar;
+    public  TextView textView;
     static LinearLayout mLlHasMore;
 
     protected CommFooter() {
 
     }
 
-    public static View create(ViewGroup parent) {
+    public  View create(ViewGroup parent) {
         CommFooter footer = new CommFooter();
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_footer_loader, parent, false);
         progressBar=(CircleProgressBar)view.findViewById(R.id.pb_footer_load);
@@ -34,7 +34,7 @@ public class CommFooter {
         return view;
     }
 
-    public static void bind(View itemView, boolean hasMore) {
+    public  void bind(View itemView, boolean hasMore) {
         CommFooter footer = (CommFooter) itemView.getTag();
         if (hasMore) {
             footer.textView.setVisibility(View.GONE);
