@@ -77,7 +77,7 @@
 
             <RadioButton
                 android:id="@+id/rb_maina_contacts"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:button="@null"
@@ -91,7 +91,7 @@
 
             <TextView
                 android:id="@+id/unread_address_number"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignRight="@+id/rb_maina_contacts"
                 android:layout_alignParentTop="true"
@@ -108,7 +108,7 @@
 
             <RadioButton
                 android:id="@+id/rb_maina_find"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:button="@null"
@@ -129,7 +129,7 @@
 
             <RadioButton
                 android:id="@+id/rb_maina_liveplay"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:button="@null"
@@ -149,7 +149,7 @@
 
             <RadioButton
                 android:id="@+id/rb_maina_mine"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:button="@null"

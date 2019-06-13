@@ -1,1 +1,1 @@
-include ':app', ':indicatorview', ':mzbanner'
+include ':app', ':indicatorview', ':mzbanner', ':widget', ':testxmpp', ':zxinglibrary', ':baselibrary'

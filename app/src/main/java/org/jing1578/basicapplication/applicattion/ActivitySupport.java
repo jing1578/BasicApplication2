@@ -8,7 +8,6 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -20,10 +19,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
+import org.jing1578.baselibrary.utils.ScreenSwitchUtils;
+import org.jing1578.baselibrary.utils.ScreenUtil;
 import org.jing1578.basicapplication.R;
-import org.jing1578.basicapplication.ui.activity.ActivityCollector;
-import org.jing1578.basicapplication.utils.ScreenSwitchUtils;
-import org.jing1578.basicapplication.utils.ScreenUtil;
+import org.jing1578.basicapplication.activity.ActivityCollector;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -48,7 +47,7 @@ public class ActivitySupport extends AppCompatActivity {
     public MyPreference myPreference;
 
     public ProgressDialog mDialog;
-    private ScreenSwitchUtils instance;
+    private ScreenSwitchUtils screenSwitchUtils;
     private View videoView;
 
 
@@ -181,12 +180,12 @@ public class ActivitySupport extends AppCompatActivity {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        if (instance != null && instance.isPortrait()) {
+        if (screenSwitchUtils != null && screenSwitchUtils.isPortrait()) {
             // 切换成竖屏
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             RelativeLayout.LayoutParams params1 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ScreenUtil.dip2px(this, 160));
             videoView.setLayoutParams(params1);
-        } else if (instance != null && !instance.isPortrait()) {
+        } else if (screenSwitchUtils != null && !screenSwitchUtils.isPortrait()) {
             // 切换成横屏
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 

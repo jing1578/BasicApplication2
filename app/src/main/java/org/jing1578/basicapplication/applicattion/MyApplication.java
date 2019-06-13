@@ -10,7 +10,7 @@ import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
 
 
-import org.jing1578.basicapplication.utils.ExceptionUtil;
+import org.jing1578.baselibrary.utils.ExceptionUtil;
 
 
 import java.util.Iterator;
@@ -21,7 +21,6 @@ import java.util.List;
 public class MyApplication extends Application {
 
     public static Context applicationContext;
-    private static MyApplication instance;
     public static int mNetState;
 
     public static String currentUserNick = "";
@@ -50,7 +49,7 @@ public class MyApplication extends Application {
 
 
         ExceptionUtil exceptionUtil=ExceptionUtil.getInstance();
-        exceptionUtil.init(this,MyApplication.getInstance());
+        exceptionUtil.init(this,MyApplication.this);
 
     }
 
@@ -89,10 +88,6 @@ public class MyApplication extends Application {
             }
         }
         return processName;
-    }
-
-    public static MyApplication getInstance() {
-        return instance;
     }
 
     public MyCore getMyCore() {

@@ -6,7 +6,8 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.provider.ContactsContract;
 
-import org.jing1578.basicapplication.utils.LogUtil;
+import org.jing1578.baselibrary.utils.LogUtil;
+
 
 /**
  * Created by jing1578 on 2016/12/9.

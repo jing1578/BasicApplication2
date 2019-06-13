@@ -7,7 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.WindowManager;
 
-import org.jing1578.basicapplication.ui.activity.ActivityCollector;
+import org.jing1578.basicapplication.activity.ActivityCollector;
 
 /**
  * Created by jing1578 on 2016/12/16.

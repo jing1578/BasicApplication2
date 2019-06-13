@@ -10,8 +10,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
-    <uses-sdk android:minSdkVersion="14"/>
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,16 +17,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".applicattion.MyApplication">
-        <activity android:name=".ui.activity.MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.ViewPagerActivity"
+        <activity android:name=".activity.ViewPagerActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".ui.activity.PopupWindowActivity"
+        <activity android:name=".activity.PopupWindowActivity"
             android:screenOrientation="portrait"/>
 
         <!--注册内容提供者-->

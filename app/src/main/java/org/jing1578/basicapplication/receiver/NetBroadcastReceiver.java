@@ -5,8 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+import org.jing1578.baselibrary.utils.NetUtil;
 import org.jing1578.basicapplication.applicattion.MyApplication;
-import org.jing1578.basicapplication.utils.NetUtil;
 import org.jing1578.basicapplication.listener.NetStateListener;
 
 import java.util.HashSet;

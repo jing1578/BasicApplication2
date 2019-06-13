@@ -28,12 +28,6 @@
         <item name="android:backgroundDimEnabled">false</item>
     </style>
 
-    <style name="CustomDialog" parent="android:style/Theme.Dialog">
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowNoTitle">true</item>
-    </style>
 
     <style name="CustomPopWindowStyle">
         <item name="android:windowEnterAnimation">@anim/popwindow_anim_in</item>
