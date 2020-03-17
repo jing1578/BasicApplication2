@@ -1,13 +1,13 @@
-package org.jing1578.basicapplication.recyclerView;
+package org.jing1578.basicapplication.recyclerview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
 /**
@@ -98,7 +98,9 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
             } else {
                 childCount = childCount - childCount % spanCount;
                 if (pos >= childCount)// 如果是最后一列，则不需要绘制右边
+                {
                     return true;
+                }
             }
         }
         return false;
@@ -110,7 +112,9 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
         if (layoutManager instanceof GridLayoutManager) {
             childCount = childCount - childCount % spanCount;
             if (pos >= childCount)// 如果是最后一行，则不需要绘制底部
+            {
                 return true;
+            }
         } else if (layoutManager instanceof StaggeredGridLayoutManager) {
             int orientation = ((StaggeredGridLayoutManager) layoutManager)
                     .getOrientation();
@@ -118,8 +122,9 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
             if (orientation == StaggeredGridLayoutManager.VERTICAL) {
                 childCount = childCount - childCount % spanCount;
                 // 如果是最后一行，则不需要绘制底部
-                if (pos >= childCount)
+                if (pos >= childCount) {
                     return true;
+                }
             } else
             // StaggeredGridLayoutManager 且横向滚动
             {

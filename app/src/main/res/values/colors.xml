@@ -17,4 +17,6 @@
     <color name="headbg">#F9F9F9</color>
     <color name="txtheadcolor">#38adff</color>
     <color name="bg_fgx">#b2b2b2</color>
+
+    <color name="color_00">#8A000000</color>
 </resources>

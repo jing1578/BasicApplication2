@@ -2,7 +2,7 @@ package org.jing1578.basicapplication.fragment;
 
 import android.os.Bundle;
 import android.os.Message;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

@@ -4,13 +4,18 @@ package org.jing1578.basicapplication.applicattion;
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
+import android.content.MutableContextWrapper;
+import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 import android.telephony.TelephonyManager;
 
 
+import com.tencent.smtt.sdk.QbSdk;
+
 import org.jing1578.baselibrary.utils.ExceptionUtil;
+import org.jing1578.basicapplication.LoadUtil;
 
 
 import java.util.Iterator;
@@ -28,7 +33,8 @@ public class MyApplication extends Application {
     private MyCore myCore;
     private MyPreference myPreference;
 
-    private int uid;
+    /*//宿主代码
+    private Resources resources;*/
 
 
     public static Context getContext() {
@@ -40,16 +46,24 @@ public class MyApplication extends Application {
 
         super.onCreate();
         applicationContext=getApplicationContext();
+        /*//获取新建的resources资源
+        resources = LoadUtil.loadResource(this);*/
+        //初始化腾讯x5服务
+        QbSdk.initX5Environment(this, new QbSdk.PreInitCallback() {
+            @Override
+            public void onCoreInitFinished() {
 
+            }
 
+            @Override
+            public void onViewInitFinished(boolean b) {
 
+            }
+        });
         initVar();
-
-
-
-
         ExceptionUtil exceptionUtil=ExceptionUtil.getInstance();
         exceptionUtil.init(this,MyApplication.this);
+
 
     }
 
@@ -104,4 +118,9 @@ public class MyApplication extends Application {
 
     }
 
+    /*// 重写该方法，当 resources 为空时，相当于没有重写，不为空时，返回新建的 resources 对象
+    @Override
+    public Resources getResources() {
+        return resources == null?super.getResources():resources;
+    }*/
 }

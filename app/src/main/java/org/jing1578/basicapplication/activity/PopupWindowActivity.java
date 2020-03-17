@@ -2,9 +2,9 @@ package org.jing1578.basicapplication.activity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.widget.AppCompatSeekBar;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.widget.AppCompatSeekBar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;

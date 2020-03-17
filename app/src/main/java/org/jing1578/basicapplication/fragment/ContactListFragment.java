@@ -4,7 +4,7 @@ package org.jing1578.basicapplication.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Message;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +23,7 @@ import org.jing1578.basicapplication.widget.SearchBar;
  * 联系人列表页(通讯录)
  */
 public class ContactListFragment extends FragmentSupport {
-    private Context _this;
+    private Context context;
     private static final String TAG = ContactListFragment.class.getSimpleName();
     private View  contactListFragmentView;
     private static volatile ContactListFragment mContactListFragment;
@@ -47,7 +47,7 @@ public class ContactListFragment extends FragmentSupport {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         contactListFragmentView=inflater.inflate(R.layout.fragment_contactlist,container,false);
-        _this=getActivity();
+        context=getActivity();
         return contactListFragmentView;
     }
 
@@ -64,7 +64,7 @@ public class ContactListFragment extends FragmentSupport {
         searchBar.setVoiceClickListener(new SearchBar.VoiceClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(_this,"点击语音按钮",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"点击语音按钮",Toast.LENGTH_SHORT).show();
             }
         });
     }

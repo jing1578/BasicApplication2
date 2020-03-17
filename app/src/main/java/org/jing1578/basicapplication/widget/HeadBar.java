@@ -130,9 +130,9 @@ public class HeadBar extends RelativeLayout {
            tvBack.setCompoundDrawables(null,null,null,null);
         }else {
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-                Drawable drawable =context.getResources().getDrawable(imgId,null);
+                Drawable drawable =context.getDrawable(imgId);
             }else{
-                Drawable drawable =context.getResources().getDrawable(imgId);
+                Drawable drawable = context.getResources().getDrawable(imgId);
                 //必须设置大小,否者不显示
                 drawable.setBounds(0,0,45,50);
                 tvBack.setCompoundDrawables(drawable,null,null,null);
@@ -156,7 +156,7 @@ public class HeadBar extends RelativeLayout {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             Drawable drawable =context.getResources().getDrawable(imgId,null);
         }else{
-            Drawable drawable =context.getResources().getDrawable(imgId);
+            Drawable drawable = context.getResources().getDrawable(imgId);
             //必须设置大小,否者不显示
             drawable.setBounds(0,0,drawable.getMinimumWidth(),drawable.getMinimumHeight());
             tvBack.setCompoundDrawables(drawable,null,null,null);

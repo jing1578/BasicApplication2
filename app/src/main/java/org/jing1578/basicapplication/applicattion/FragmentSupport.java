@@ -3,12 +3,13 @@ package org.jing1578.basicapplication.applicattion;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.util.DisplayMetrics;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.widget.TextView;
 
+
+import com.tencent.smtt.sdk.WebSettings;
+import com.tencent.smtt.sdk.WebView;
 
 import java.util.ArrayList;
 import java.util.List;

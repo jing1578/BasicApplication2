@@ -1,6 +1,6 @@
 package org.jing1578.basicapplication.adapter;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,29 +14,24 @@ import java.util.List;
  * Created by zhouwei on 16/11/30.
  */
 
-public class MyAdapter extends RecyclerView.Adapter{
-    private List<String> mData;
+public class MyAdapter extends BaseQuickAdapter<String,MyAdapter.ViewHolder>{
 
     public void setData(List<String> data) {
         mData = data;
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item,null));
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-       ViewHolder viewHolder = (ViewHolder) holder;
-
-       viewHolder.mTextView.setText(mData.get(position));
+    public void onBindViewHolder(ViewHolder holder, int position) {
+       super.onBindViewHolder(holder,position);
+       holder.mTextView.setText(mData.get(position));
     }
 
-    @Override
-    public int getItemCount() {
-        return mData == null ? 0:mData.size();
-    }
+
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public TextView mTextView;

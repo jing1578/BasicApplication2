@@ -7,7 +7,7 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -229,6 +229,13 @@ public class ActivitySupport extends AppCompatActivity {
         }
     }
 
-
+    @Override
+    public Resources getResources() {
+        if (getApplication() != null && getApplication().getResources() != null){
+            // 因为宿主重写了该方法，所以获取的将是新创建的 resources 对象
+            return getApplication().getResources();
+        }
+        return super.getResources();
+    }
 
 }

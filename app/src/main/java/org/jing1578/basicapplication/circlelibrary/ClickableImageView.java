@@ -10,7 +10,7 @@ import android.widget.ImageView;
 /**  有按压效果的ImageView
  * @author：Jorge on 2015/9/10 12:40
  */
-public class ClickableImageView extends android.support.v7.widget.AppCompatImageView {
+public class ClickableImageView extends androidx.appcompat.widget.AppCompatImageView {
     public ClickableImageView(Context context) {
         super(context);
         this.setOnTouchListener(VIEW_TOUCH_DARK);

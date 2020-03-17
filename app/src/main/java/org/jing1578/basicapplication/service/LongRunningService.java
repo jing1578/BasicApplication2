@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.SystemClock;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 
 import org.greenrobot.eventbus.Subscribe;

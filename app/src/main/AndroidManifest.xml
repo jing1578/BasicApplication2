@@ -2,12 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.jing1578.basicapplication">
 
+    <!--腾讯x5服务-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--腾讯x5服务-->
+
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
     <application
@@ -17,18 +23,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".applicattion.MyApplication">
-        <activity android:name=".activity.MainActivity">
+
+        <activity android:name=".TestActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+
+        <activity android:name=".activity.MainActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ViewPagerActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.PopupWindowActivity"
-            android:screenOrientation="portrait"/>
-
+        <activity android:name=".activity.ViewPagerActivity" />
+        <activity android:name=".activity.PopupWindowActivity" />
+        <activity android:name=".activity.WebViewActivity" />
+        <activity android:name=".activity.WebView2Activity"/>
+        <activity android:name=".activity.AutoCompleteTextViewActivity" />
         <!--注册内容提供者-->
         <provider
             android:name=".db.DatabaseProvider"
